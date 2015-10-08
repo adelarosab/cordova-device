@@ -1,6 +1,6 @@
 {
   "name": "cordova-device",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "authors": [
     "Adrian de la Rosa <adrian@delarosab.me>"
   ],
@@ -8,7 +8,9 @@
   "keywords": [
     "web-component",
     "polymer",
-    "seed"
+    "cordova",
+    "device",
+    "information"
   ],
   "main": "cordova-device.html",
   "license": "https://raw.githubusercontent.com/adelarosab/cordova-device/master/LICENSE",
