@@ -3,8 +3,11 @@
   Polymer({
     is: "cordova-device",
     properties: {
-      _promise: {
-        type: Object
+      _enabler: {
+        type: Object,
+        value: function() {
+          return Q.defer();
+        }
       },
       model: {
         notify: true,
@@ -19,11 +22,7 @@
         type: String
       },
       promise: {
-        readOnly: true,
-        type: Object,
-        value: function() {
-          return Q.defer();
-        }
+        computed: "_computePromise(_enabler)"
       },
       ready: {
         notify: true,
@@ -45,19 +44,22 @@
         type: String
       }
     },
+    _computePromise: function(enabler) {
+      return enabler.promise;
+    },
     _onDeviceReady: function() {
       this._setReady(true);
-      this.promise.resolve();
+      this._enabler.resolve();
       this._setModel(device.model);
       this._setPlatform(device.platform);
       this._setUuid(device.uuid);
       return this._setVersion(device.version);
     },
     attached: function() {
-      return window.addEventListener("deviceready", this._onDeviceReady.bind(this), false);
+      return document.addEventListener("deviceready", this._onDeviceReady.bind(this), false);
     },
     detached: function() {
-      return window.removeEventListener("deviceready", this._onDeviceReady);
+      return document.removeEventListener("deviceready", this._onDeviceReady);
     }
   });
 

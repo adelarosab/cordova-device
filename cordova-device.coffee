@@ -2,8 +2,10 @@ Polymer
   is: "cordova-device"
 
   properties:
-    _promise:
+    _enabler:
       type: Object
+      value: ->
+        Q.defer()
 
     model:
       notify: true
@@ -16,10 +18,7 @@ Polymer
       reflectToAttribute: yes
       type: String
     promise:
-      readOnly: yes
-      type: Object
-      value: ->
-        Q.defer()
+      computed: "_computePromise(_enabler)"
     ready:
       notify: true
       readOnly: yes
@@ -37,10 +36,12 @@ Polymer
       reflectToAttribute: yes
       type: String
 
+  _computePromise: (enabler) ->
+    enabler.promise
 
   _onDeviceReady: ->
     @_setReady yes
-    @promise.resolve()
+    @_enabler.resolve()
 
     @_setModel device.model
     @_setPlatform device.platform
@@ -48,7 +49,7 @@ Polymer
     @_setVersion device.version
 
   attached: ->
-    window.addEventListener "deviceready", (@_onDeviceReady.bind this), false
+    document.addEventListener "deviceready", (@_onDeviceReady.bind this), false
 
   detached: ->
-    window.removeEventListener "deviceready", @_onDeviceReady
+    document.removeEventListener "deviceready", @_onDeviceReady
