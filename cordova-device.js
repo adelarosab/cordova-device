@@ -4,10 +4,7 @@
     is: "cordova-device",
     properties: {
       _promise: {
-        type: Object,
-        value: function() {
-          return Q.defer();
-        }
+        type: Object
       },
       model: {
         notify: true,
@@ -20,6 +17,13 @@
         readOnly: true,
         reflectToAttribute: true,
         type: String
+      },
+      promise: {
+        readOnly: true,
+        type: Object,
+        value: function() {
+          return Q.defer();
+        }
       },
       ready: {
         notify: true,
@@ -43,7 +47,7 @@
     },
     _onDeviceReady: function() {
       this._setReady(true);
-      this._promise.resolve();
+      this.promise.resolve();
       this._setModel(device.model);
       this._setPlatform(device.platform);
       this._setUuid(device.uuid);
@@ -54,9 +58,6 @@
     },
     detached: function() {
       return window.removeEventListener("deviceready", this._onDeviceReady);
-    },
-    promise: function() {
-      return this._promise.promise;
     }
   });
 

@@ -4,8 +4,6 @@ Polymer
   properties:
     _promise:
       type: Object
-      value: ->
-        Q.defer()
 
     model:
       notify: true
@@ -17,6 +15,11 @@ Polymer
       readOnly: yes
       reflectToAttribute: yes
       type: String
+    promise:
+      readOnly: yes
+      type: Object
+      value: ->
+        Q.defer()
     ready:
       notify: true
       readOnly: yes
@@ -37,7 +40,7 @@ Polymer
 
   _onDeviceReady: ->
     @_setReady yes
-    @_promise.resolve()
+    @promise.resolve()
 
     @_setModel device.model
     @_setPlatform device.platform
@@ -49,6 +52,3 @@ Polymer
 
   detached: ->
     window.removeEventListener "deviceready", @_onDeviceReady
-
-  promise: ->
-    @_promise.promise
