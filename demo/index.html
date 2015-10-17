@@ -1,22 +1,55 @@
 <!doctype html>
 <html>
   <head>
+    <!-- META -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <!-- TITLE -->
     <title>cordova-device Demo</title>
+
+    <!-- COMPONENT -->
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../bower_components/font-roboto/roboto.html">
     <link rel="import" href="../cordova-device.html">
   </head>
   <body unresolved>
+    <style>
+      body {
+        font-family: Roboto, sans-serif;
+      }
+
+      label {
+        font-weight: bold;
+      }
+    </style>
     <cordova-device></cordova-device>
+    <section>
+      <header>
+        <h1>Device information</h1>
+      </header>
+      <main>
+        <p>
+          My device <label class="model">[Model]</label> with UUID <label class="uuid">[UUID]</label>
+          is running <label class="platform">[Platform]</label> version
+          <label class="version">[Version]</label>.
+        </p>
+        <p>And it should be ready...<label class="ready"></label>.</p>
+      </main>
+    </section>
     <script>
-      var deviceReady = document.querySelector('cordova-device');
-      deviceReady.promise().then(function() {
-        document.write('promise');
+      var deviceReadyEl = document.querySelector('cordova-device');
+      deviceReadyEl.addEventListener('ready-changed', function() {
+        document.querySelector('.ready').innerHTML = '<i>now</i>';
       });
-      deviceReady.addEventListener('ready-changed', function() {
-        document.write('event');
-      });
+
+      var fill = function(key) {
+        document.querySelector('.' + key).innerHTML = deviceReadyEl[key];
+      };
+      deviceReadyEl.addEventListener('model-changed', fill.bind(undefined, 'model'));
+      deviceReadyEl.addEventListener('uuid-changed', fill.bind(undefined, 'uuid'));
+      deviceReadyEl.addEventListener('platform-changed', fill.bind(undefined, 'platform'));
+      deviceReadyEl.addEventListener('version-changed', fill.bind(undefined, 'version'));
     </script>
   </body>
 </html>
