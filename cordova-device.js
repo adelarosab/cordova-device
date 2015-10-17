@@ -3,27 +3,24 @@
   Polymer({
     is: "cordova-device",
     properties: {
-      _enabler: {
-        type: Object,
-        value: function() {
-          return Q.defer();
-        }
-      },
+
+      /* Return device model (Nexus One returns "Passion"). */
       model: {
         notify: true,
         readOnly: true,
         reflectToAttribute: true,
         type: String
       },
+
+      /* Return device platform ("iOS"). */
       platform: {
         notify: true,
         readOnly: true,
         reflectToAttribute: true,
         type: String
       },
-      promise: {
-        computed: "_computePromise(_enabler)"
-      },
+
+      /* Return if cordova deviceready event has been fired. */
       ready: {
         notify: true,
         readOnly: true,
@@ -31,12 +28,18 @@
         type: Boolean,
         value: false
       },
+
+      /* Return UUID created by manufacturer (BlackBerry returns the PIN number of
+         the device).
+       */
       uuid: {
         notify: true,
         readOnly: true,
         reflectToAttribute: true,
         type: String
       },
+
+      /* Return device platform version (iOS 3.2 returns "3.2"). */
       version: {
         notify: true,
         readOnly: true,
@@ -44,14 +47,10 @@
         type: String
       }
     },
-    _computePromise: function(enabler) {
-      return enabler.promise;
-    },
     _onDeviceReady: function() {
-      this._setReady(true);
-      this._enabler.resolve();
       this._setModel(device.model);
       this._setPlatform(device.platform);
+      this._setReady(true);
       this._setUuid(device.uuid);
       return this._setVersion(device.version);
     },
