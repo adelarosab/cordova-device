@@ -49,7 +49,8 @@ Polymer(
         computed: '_computeReady(_ready_, _paused_)',
         notify: true,
         observer: '_observeReady',
-        type: Boolean
+        type: Boolean,
+        value: false
       },
 
       /**
