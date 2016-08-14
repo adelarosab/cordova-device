@@ -3,6 +3,13 @@ _[Demo and API docs](https://adelarosab.github.io/cordova-device)_
 ## Note:
 Due to restrictions `ready` attribute is not shown into attributes table.
 
+## Installation
+In your `www` project:
+`bower install --save `
+
+In your `cordova` project:
+`cordova plugin add cordova-plugin-device`
+
 ## &lt;cordova-device&gt;
 
 `<cordova-core>` describes the device's hardware and software.
