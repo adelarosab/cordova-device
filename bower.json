@@ -1,10 +1,10 @@
 {
   "name": "cordova-device",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "authors": [
     "Adrian de la Rosa <adrian@delarosab.me>"
   ],
-  "description": "An element providing device information for cordova applications.",
+  "description": "An element which describes the device's hardware and software.",
   "keywords": [
     "web-component",
     "web-components",
@@ -17,9 +17,10 @@
   "license": "https://raw.githubusercontent.com/adelarosab/cordova-device/master/LICENSE",
   "homepage": "https://github.com/adelarosab/cordova-device/",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.1.0"
+    "cordova-core": "^1.1.6",
+    "polymer": "^1.6.1"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0"
+    "iron-component-page": "^1.1.7"
   }
 }

@@ -1,19 +1,16 @@
 <!doctype html>
 <html>
   <head>
-    <!-- META -->
+    <link rel="import" href="../cordova-device.html">
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 
-    <!-- TITLE -->
-    <title>cordova-device Demo</title>
+    <title>cordova-core Demo</title>
 
-    <!-- COMPONENT -->
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="../bower_components/font-roboto/roboto.html">
-    <link rel="import" href="../cordova-device.html">
+    <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
   </head>
-  <body unresolved>
+  <body>
     <style>
       body {
         font-family: Roboto, sans-serif;
@@ -39,11 +36,13 @@
     </section>
     <script>
       var deviceReadyEl = document.querySelector('cordova-device');
-      deviceReadyEl.addEventListener('ready-changed', function() {
-        document.querySelector('.ready').innerHTML = '<i>now</i>';
-      });
+      deviceReadyEl.addEventListener(
+        'ready-changed', function () {
+          document.querySelector('.ready').innerHTML = '<i>now</i>';
+        }
+      );
 
-      var fill = function(key) {
+      var fill = function (key) {
         document.querySelector('.' + key).innerHTML = deviceReadyEl[key];
       };
       deviceReadyEl.addEventListener('model-changed', fill.bind(undefined, 'model'));

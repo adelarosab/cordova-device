@@ -1,36 +1,56 @@
-# cordova-device
+_[Demo and API docs](https://adelarosab.github.io/cordova-device)_
 
-An element providing device information for cordova applications.
+## Note:
+Due to restrictions `ready` attribute is not shown into attributes table.
 
+## &lt;cordova-device&gt;
 
-## Dependencies
+`<cordova-core>` describes the device's hardware and software.
 
-Element dependencies are managed via [Bower](http://bower.io/). You can
-install that via:
+```html
+<cordova-core
+    cordova="6.3.0"
+    manufacturer="Apple"
+    model="Passion"
+    platform="iOS"
+    ready
+    serial="XXX"
+></cordova-core>
+```
+### Attributes
+ 
+#### cordova (read-only)
 
-    npm install -g bower
+Return the version of Cordova running on the device.
+ 
+#### manufacturer (read-only)
 
-Then, go ahead and download the element's dependencies:
+Return the device's manufacturer.
+ 
+#### model (read-only)
 
-    bower install
+Return the name of the device's model or product. (Nexus One returns "Passion").
+ 
+#### platform (read-only)
 
+Return the device's operating system name. ("iOS").
+ 
+#### ready (read-only)
 
-## Playing With Your Element
+Return if cordova deviceready event has been fired.
+ 
+#### serial (read-only)
 
-If you wish to work on your element in isolation, we recommend that you use
-[Polyserve](https://github.com/PolymerLabs/polyserve) to keep your element's
-bower dependencies in line. You can install it via:
+Return the device hardware serial number.
+ 
+#### uuid (read-only)
 
-    npm install -g polyserve
+Return the device's Universally Unique Identifier.
+ 
+#### version (read-only)
 
-And you can run it via:
+Return the operating system version.
+ 
+#### virtual (read-only)
 
-    polyserve
-
-Once running, you can preview your element at
-`http://localhost:8080/components/cordova-device/`, where `cordova-device` is the name of the directory containing it.
-
-
-## Yeoman support
-
-If you'd like to use Yeoman to scaffold your element that's possible. The official [`generator-polymer`](https://github.com/yeoman/generator-polymer) generator has a [`seed`](https://github.com/yeoman/generator-polymer#seed) subgenerator.
+Return whether the device is running on a simulator.

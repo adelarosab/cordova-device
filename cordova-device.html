@@ -1,6 +1,8 @@
-<link rel="import" href="../polymer/polymer.html">
+<link href="../polymer/polymer.html"
+  rel="import">
+
 <!--
-An element providing device information for cordova applications.
+An element which describes the device's hardware and software.
 
 Example:
 
@@ -10,5 +12,9 @@ Example:
 @element cordova-device
 @demo demo/index.html
 -->
-<dom-module id="cordova-device"></dom-module>
-<script src="cordova-device.js"></script>
+<dom-module id="cordova-device">
+  <cordova-core
+    paused="{{_paused_}}"
+    ready="{{_ready_}}"></cordova-core>
+  <script src="cordova-device.js"></script>
+</dom-module>
