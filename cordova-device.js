@@ -82,7 +82,7 @@ Polymer(
       /**
        * Return whether the device is running on a simulator.
        */
-      virtua: {
+      virtual: {
         notify: true,
         readOnly: true,
         type: Boolean
@@ -93,17 +93,19 @@ Polymer(
       return ready && !paused;
     },
 
-    _observeReady() {
-      const device = window.device;
+    _observeReady(ready) {
+      if (ready) {
+        const device = window.device;
 
-      this._setCordova(device.cordova);
-      this._setManufacturer(device.manufacturer);
-      this._setModel(device.model);
-      this._setPlatform(device.platform);
-      this._setSerial(device.serial);
-      this._setUuid(device.uuid);
-      this._setVersion(device.version);
-      this._setVirtual(device.virtual);
+        this._setCordova(device.cordova);
+        this._setManufacturer(device.manufacturer);
+        this._setModel(device.model);
+        this._setPlatform(device.platform);
+        this._setSerial(device.serial);
+        this._setUuid(device.uuid);
+        this._setVersion(device.version);
+        this._setVirtual(device.isVirtual);
+      }
     }
   }
 );
