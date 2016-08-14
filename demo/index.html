@@ -3,7 +3,11 @@
   <head>
     <link rel="import" href="../cordova-device.html">
     <link rel="import" href="../../iron-icon/iron-icon.html">
+    <link rel="import" href="../../iron-icons/communication-icons.html">
+    <link rel="import" href="../../iron-icons/hardware-icons.html">
+    <link rel="import" href="../../iron-icons/iron-icons.html">
     <link rel="import" href="../../paper-item/paper-icon-item.html">
+    <link rel="import" href="../../paper-item/paper-item-body.html">
     <link rel="import" href="../../font-roboto/roboto.html">
 
     <meta charset="utf-8">
@@ -14,18 +18,32 @@
     <script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
   </head>
   <body>
+    <style>
+      html,
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+
+      h1 {
+        text-transform: uppercase;
+      }
+    </style>
+
     <cordova-device></cordova-device>
 
     <section role="listbox">
+      <header>
+        <h1>Information</h1>
+      </header>
       <paper-icon-item>
-        <iron-icon icon="communication:phone" item-icon></iron-icon>
+        <iron-icon icon="icons:polymer" item-icon></iron-icon>
         <paper-item-body two-line>
           <div class="cordova"></div>
           <div secondary>Cordova</div>
         </paper-item-body>
       </paper-icon-item>
       <paper-icon-item>
-        <iron-icon icon="communication:phone" item-icon></iron-icon>
+        <iron-icon icon="communication:phonelink-setup" item-icon></iron-icon>
         <paper-item-body two-line>
           <div class="manufacturer"></div>
           <div secondary>Manufacturer</div>
@@ -39,28 +57,28 @@
         </paper-item-body>
       </paper-icon-item>
       <paper-icon-item>
-        <iron-icon icon="communication:phone" item-icon></iron-icon>
+        <iron-icon icon="hardware:phonelink" item-icon></iron-icon>
         <paper-item-body two-line>
           <div class="platform"></div>
           <div secondary>Platform</div>
         </paper-item-body>
       </paper-icon-item>
       <paper-icon-item>
-        <iron-icon icon="communication:phone" item-icon></iron-icon>
+        <iron-icon icon="communication:phonelink-ring" item-icon></iron-icon>
         <paper-item-body two-line>
           <div class="serial"></div>
           <div secondary>Serial</div>
         </paper-item-body>
       </paper-icon-item>
       <paper-icon-item>
-        <iron-icon icon="communication:phone" item-icon></iron-icon>
+        <iron-icon icon="communication:phonelink-lock" item-icon></iron-icon>
         <paper-item-body two-line>
           <div class="uuid"></div>
           <div secondary>UUID</div>
         </paper-item-body>
       </paper-icon-item>
       <paper-icon-item>
-        <iron-icon icon="communication:phone" item-icon></iron-icon>
+        <iron-icon icon="icons:perm-device-information" item-icon></iron-icon>
         <paper-item-body two-line>
           <div class="version"></div>
           <div secondary>OS Version</div>
