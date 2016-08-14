@@ -1,0 +1,28 @@
+{
+  "name": "cordova-device",
+  "version": "1.1.6",
+  "authors": [
+    "Adrian de la Rosa <adrian@delarosab.me>"
+  ],
+  "description": "An element which describes the device's hardware and software.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "cordova",
+    "device",
+    "information"
+  ],
+  "main": "cordova-device.html",
+  "license": "https://raw.githubusercontent.com/adelarosab/cordova-device/master/LICENSE",
+  "homepage": "https://github.com/adelarosab/cordova-device/",
+  "dependencies": {
+    "cordova-core": "^1.1.7",
+    "polymer": "^1.6.1"
+  },
+  "devDependencies": {
+    "iron-component-page": "^1.1.7",
+    "paper-item": "^1.2.1",
+    "iron-icon": "^1.0.10"
+  }
+}

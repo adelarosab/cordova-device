@@ -1,0 +1,19 @@
+{
+  "name": "cordova-device",
+  "homepage": "https://github.com/adelarosab/cordova-device",
+  "authors": [
+    "Adrian de la Rosa <adrian@delarosab.me>"
+  ],
+  "description": "Demo of cordova-device",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "iron-component-page": "^1.1.7",
+    "cordova-device": "^1.1.6",
+    "iron-icon": "^1.0.10",
+    "iron-icons": "^1.1.3",
+    "paper-item": "^1.2.1",
+    "font-roboto": "^0.0.2"
+  }
+}
