@@ -21,6 +21,8 @@
     "polymer": "^1.6.1"
   },
   "devDependencies": {
-    "iron-component-page": "^1.1.7"
+    "iron-component-page": "^1.1.7",
+    "paper-item": "^1.2.1",
+    "iron-icon": "^1.0.10"
   }
 }
