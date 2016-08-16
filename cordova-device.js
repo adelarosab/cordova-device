@@ -4,6 +4,10 @@ Polymer(
   {
     is: 'cordova-device',
 
+    hostAttributes: {
+      hidden: true
+    },
+
     properties: {
       /**
        * Return the version of Cordova running on the device.
