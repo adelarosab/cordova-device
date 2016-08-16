@@ -1,63 +1,39 @@
 _[Demo and API docs](https://adelarosab.github.io/cordova-device)_
 
-## Note:
-Due to restrictions `ready` attribute is not shown into attributes table.
+### &lt;cordova-camera&gt;
+`<cordova-device>` describes the device's hardware and software.
 
-## Installation
+### Installation
 In your `www` project:
-`bower install --save `
+```bash
+bower install --save 
+```
 
 In your `cordova` project:
-`cordova plugin add cordova-plugin-device`
+```bash
+cordova plugin add cordova-plugin-device
+```
 
-## &lt;cordova-device&gt;
-
-`<cordova-core>` describes the device's hardware and software.
-
+### Usage
 ```html
-<cordova-core
+<cordova-device
     cordova="6.3.0"
     manufacturer="Apple"
     model="Passion"
     platform="iOS"
     ready
     serial="XXX"
-></cordova-core>
+    uuid="xxxx xxxx xxxx"
+    version="6.1.0"
+    virtual
+></cordova-device>
 ```
-### Attributes
- 
-#### cordova (read-only)
 
-Return the version of Cordova running on the device.
- 
-#### manufacturer (read-only)
+`<cordova-device>` describes main features of the hardware and software 
+device. Some of the attributes in the element are not available for all the 
+supported cordova platforms. Please read more in the [documentation](http://cordova.apache.org/docs/en/6.x/reference/cordova-plugin-device/index.html).
 
-Return the device's manufacturer.
- 
-#### model (read-only)
+---
 
-Return the name of the device's model or product. (Nexus One returns "Passion").
- 
-#### platform (read-only)
-
-Return the device's operating system name. ("iOS").
- 
-#### ready (read-only)
-
-Return if cordova deviceready event has been fired.
- 
-#### serial (read-only)
-
-Return the device hardware serial number.
- 
-#### uuid (read-only)
-
-Return the device's Universally Unique Identifier.
- 
-#### version (read-only)
-
-Return the operating system version.
- 
-#### virtual (read-only)
-
-Return whether the device is running on a simulator.
+###### Note:
+Due to restrictions `ready` attribute is not shown into attributes table.
